@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Reservationcs</h1>
+<h1>予約一覧</h1>
+<br>
+<%= month_calendar events: @reservationcs do |date, reservations| %>
+  <%= date %>
 
-<div id="reservationcs">
-  <% @reservationcs.each do |reservationc| %>
-    <%= render reservationc %>
-    <p>
-      <%= link_to "Show this reservation", reservationc %>
-    </p>
+  <% reservations.each do |reservation| %>
+    <div>
+      <%= link_to "/reservationcs/#{reservation.id}" do %>
+        <%= reservation.start_time.hour %>:00
+        <%= reservation.name %>
+      <% end%>
+    </div>
   <% end %>
-</div>
-
+<% end %>
 <%= link_to "New reservation", new_reservationc_path %>
