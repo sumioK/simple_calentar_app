@@ -1,12 +1,12 @@
 <div id="<%= dom_id reservationc %>">
   <p>
-    <strong>Name:</strong>
-    <%= reservationc.name %>
+    <strong>氏名:</strong>
+    <%= "#{reservationc.name}様 " %>
   </p>
 
   <p>
-    <strong>Start time:</strong>
-    <%= reservationc.start_time %>
+    <strong>予約日時</strong>
+    <%= reservationc.start_time.strftime('%y年%m月%d日 %H時') %>
   </p>
 
 </div>

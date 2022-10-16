@@ -4,7 +4,7 @@ class Reservationc < ApplicationRecord
   validate :date_is_today
   validate :start_time_not_sunday_saturday
   validate :time_only
-  validates :start_time, uniqueness: {message: 'はほかのユーザーが予約しています'}
+  validates :start_time, uniqueness: {message: 'は既にほかのユーザーが予約しています'}
 
 
 
